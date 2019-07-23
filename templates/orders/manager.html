@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for item in test %}
+            <tr>
+                <th scope="row">{{item.item_id}}</th>
+                <td>{{item.product__id}}</td>
+                <td>{{item.product__title}}</td>
+                <td>{{item.total_quantity}}</td>
+                <td>{{item.total_price}} TK</td>
+              </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <br>
+    <br>
+<!-- 
+    <h3>All Orders --</h3>
+    
+    <ul>
+            {% for order in orders %}
+                <li> <a class "order_id" href="{% url 'index' %}orders/{{order.id}}"> {{ order.id }} </a> </li>
+            {% endfor %}
+    </ul>
+
+-->
+
+{% endblock %}

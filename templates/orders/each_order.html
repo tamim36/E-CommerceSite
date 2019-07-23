@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">City</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for order in orders %}
+            <tr>
+                <th scope="row">{{order.id}}</th>
+                <td>{{order.first_name}}</td>
+                <td>{{order.last_name}}</td>
+                <td>{{order.email}}</td>
+                <td>{{order.address}}</td>
+                <td>{{order.city}}</td>
+              </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+
+{% endblock %}
